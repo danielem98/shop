@@ -1,0 +1,9 @@
+<div class="quantity-cotainer">
+    <div class="quantity-decrease">
+        <button class="btn btn-primary" (click)="removeFromCart()">-</button>
+    </div>
+    <div class="quantity-display">{{getQuantity()}} in cart </div>
+    <div class="quantity-increase">
+        <button class="btn btn-primary" (click)="addToCart()">+</button>
+    </div>
+</div>

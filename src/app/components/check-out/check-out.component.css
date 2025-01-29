@@ -1,0 +1,21 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start
+}
+
+.address-container,
+.city-cap-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.address,
+.city{
+    flex: 3;
+}
+
+.address-number,
+.cap{
+    flex: 1;
+}

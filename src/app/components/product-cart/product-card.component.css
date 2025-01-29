@@ -1,0 +1,9 @@
+.quantity-cotainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quantity-display{
+    font-size: medium;
+}

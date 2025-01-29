@@ -1,0 +1,9 @@
+nav{
+    padding-top: 25px;
+}
+
+.badge-size{
+    font-size: 0.75rem;
+    padding: 0.2em 0.4em; 
+    min-width: auto;
+}

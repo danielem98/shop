@@ -1,1 +1,27 @@
-<p>admin-products works!</p>
+<p>
+    <a *ngIf="isVisible" [routerLink]="['new']" class="btn btn-primary" (click)="invisible()">New Product</a>
+    <router-outlet></router-outlet>
+</p>
+<p>
+    <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search..." >
+</p>
+
+<table class="table table-hover table-responsive">
+    <thead class="table-light">
+        <tr>
+            <th>Title</th>
+            <th>Price in $</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let product of filteredProducts ">
+            <td>{{product.title}}</td>
+            <td>{{product.price | number:"1.2-2"}}</td>
+            <td>
+                <a [routerLink]="[product.key]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
