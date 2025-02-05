@@ -4,8 +4,11 @@
       <h5 class="card-title">Order summary</h5>
       <pre class="card-text">{{shoppingCartItemCount}} items in your cart</pre>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of cartArray"
-        >{{item.quantity}} x {{item.title}}</li>
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let item of cartArray"
+        >{{item.quantity}} x {{item.title}}
+        <span>{{item.price * item.quantity | currency:'EUR'}}</span>
+        </li>
+        <li class="list-group-item list-group-item-light">Total price {{shoppingTotalPrice | currency:'EUR' }}</li>  
       </ul>
     </div>
   </div>
