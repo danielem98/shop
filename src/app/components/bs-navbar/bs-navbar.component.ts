@@ -1,10 +1,9 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { User } from 'firebase/auth';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-import { async, of, Subscription, switchMap } from 'rxjs';
+import { of, Subscription, switchMap } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { AppUser } from '../../models/app-user';
 import { ShoppingCartService } from '../../services/shopping-cart.service';

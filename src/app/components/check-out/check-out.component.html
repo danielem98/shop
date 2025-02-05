@@ -1,45 +1,53 @@
-<div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="placeOrder()">
-        <div class="form-group mb-3" >
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" formControlName="name">
-          <div class="alert alert-danger" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">Name is required</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-container">
+            <form [formGroup]="form" (ngSubmit)="placeOrder()">
+                <div class="form-group mb-3" >
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" formControlName="name">
+                  <div class="alert alert-danger" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">Name is required</div>
+                </div>
+                <div class="form-group mb-3" >
+                  <label for="surname" class="form-label">Surname</label>
+                  <input type="text" class="form-control" id="surname" formControlName="surname">
+                  <div class="alert alert-danger" *ngIf="form.get('surname')?.touched && form.get('surname')?.hasError('required')">Surname is required</div>
+                </div>
+            
+                <div class="address-container">
+                    <div class="form-group mb-3 address">
+                        <label for="address" class="form-label">address</label>
+                        <input type="text" class="form-control" id="address" formControlName="address">
+                        <div class="alert alert-danger" *ngIf="form.get('address')?.touched && form.get('address')?.hasError('required')">Address is required</div>
+                    </div>
+                    <div class="form-group mb-3 address-number">   
+                        <label for="address-number" class="form-label">Number</label>
+                        <input type="number" class="form-control" id="address-number" formControlName="addressNumber">
+                        <div class="alert alert-danger" *ngIf="form.get('addressNumber')?.touched && form.get('addressNumber')?.hasError('required')">Address Number is required</div>  
+                        <div class="alert alert-danger" *ngIf="form.get('addressNumber')?.hasError('min') || form.get('addressNumber')?.hasError('max')">Address Number between 1-999</div>
+                    </div>
+                </div>
+            
+                <div class="city-cap-container">
+                    <div class="form-group mb-3 city">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" formControlName="city">
+                        <div class="alert alert-danger" *ngIf="form.get('city')?.touched && form.get('city')?.hasError('required')">City is required</div>
+                    </div>
+                    <div class="form-group mb-3 cap">   
+                        <label for="cap" class="form-label">CAP</label>
+                        <input type="number" class="form-control" id="cap" formControlName="cap">
+                        <div class="alert alert-danger" *ngIf="form.get('cap')?.touched && form.get('cap')?.hasError('required')">CAP is required</div>
+                        <div class="alert alert-danger" *ngIf="form.get('cap')?.hasError('min') || form.get('cap')?.hasError('max')">CAP has 5 numbers</div> 
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Submit</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group mb-3" >
-          <label for="surname" class="form-label">Surname</label>
-          <input type="text" class="form-control" id="surname" formControlName="surname">
-          <div class="alert alert-danger" *ngIf="form.get('surname')?.touched && form.get('surname')?.hasError('required')">Surname is required</div>
-        </div>
-    
-        <div class="address-container">
-            <div class="form-group mb-3 address">
-                <label for="address" class="form-label">address</label>
-                <input type="text" class="form-control" id="address" formControlName="address">
-                <div class="alert alert-danger" *ngIf="form.get('address')?.touched && form.get('address')?.hasError('required')">Address is required</div>
-            </div>
-            <div class="form-group mb-3 address-number">   
-                <label for="address-number" class="form-label">Number</label>
-                <input type="number" class="form-control" id="address-number" formControlName="addressNumber">
-                <div class="alert alert-danger" *ngIf="form.get('addressNumber')?.touched && form.get('addressNumber')?.hasError('required')">Address Number is required</div>  
-                <div class="alert alert-danger" *ngIf="form.get('addressNumber')?.hasError('min') || form.get('addressNumber')?.hasError('max')">Address Number between 1-999</div>
-            </div>
-        </div>
-    
-        <div class="city-cap-container">
-            <div class="form-group mb-3 city">
-                <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control" id="city" formControlName="city">
-                <div class="alert alert-danger" *ngIf="form.get('city')?.touched && form.get('city')?.hasError('required')">City is required</div>
-            </div>
-            <div class="form-group mb-3 cap">   
-                <label for="cap" class="form-label">CAP</label>
-                <input type="number" class="form-control" id="cap" formControlName="cap">
-                <div class="alert alert-danger" *ngIf="form.get('cap')?.touched && form.get('cap')?.hasError('required')">CAP is required</div>
-                <div class="alert alert-danger" *ngIf="form.get('cap')?.hasError('min') || form.get('cap')?.hasError('max')">CAP has 5 numbers</div> 
-            </div>
-        </div>
-        <div class="button-container">
-            <button type="submit" class="btn btn-primary" [disabled] = "form.invalid">Submit</button>
-        </div>
-    </form>
+    </div>
+    <div class="col-6">
+        <shopping-cart-summary [cart] = "cart"></shopping-cart-summary>
+    </div>
 </div>
+
