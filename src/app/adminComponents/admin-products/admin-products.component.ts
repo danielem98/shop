@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 import { ProductService } from '../../services/product.service';
@@ -18,7 +18,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   filteredProducts: any[] = [];
   subscription: Subscription | undefined;
 
-  constructor(private router: Router, private productService: ProductService) {
+  constructor(private router: Router, private productService: ProductService, private cdr: ChangeDetectorRef) {
   }
   
   ngOnInit(){
@@ -35,6 +35,9 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
       this.subscription =  this.productService.getAll().subscribe(product => {
         this.filteredProducts = this.products = product
+
+        //forzo il rilevamento dei cambiamenti per la visualizzazione dei prodotti dopo refresh
+        this.cdr.detectChanges();
       })
   }
 

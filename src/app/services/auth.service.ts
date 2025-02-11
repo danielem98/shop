@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Auth, GoogleAuthProvider, signInWithPopup, User} from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { browserSessionPersistence, onAuthStateChanged, setPersistence } from 'firebase/auth';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { browserSessionPersistence, onAuthStateChanged, setPersistence, UserInfo } from 'firebase/auth';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  //inizializzo l'instanza con valore null
-  private userSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null)
+  //inizializzo l'instanza con valore undefined per far aspettare authguard che si connetta a firebase
+  private userSubject: BehaviorSubject<User | null | undefined> = new BehaviorSubject<User | null | undefined>(undefined)
   //creo una variabile pubblica per far si che i vari componenti possano iscriversi senza poter modificare il contenuto del userSubject
-  public user$: Observable<User| null> = this.userSubject.asObservable()
+  public user$: Observable<User| undefined> = this.userSubject.asObservable().pipe(map((user)=> user ? user : undefined))
   redirectUrl : string | null = null
 
   constructor(private auth: Auth, private router: Router, private userService: UserService) { 

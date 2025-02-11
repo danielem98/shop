@@ -1,11 +1,12 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ShoppingCart } from '../../models/shopping-cart';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'shopping-cart-summary',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './shopping-cart-summary.component.html',
   styleUrl: './shopping-cart-summary.component.css'
 })

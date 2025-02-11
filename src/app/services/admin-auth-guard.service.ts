@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, filter, take } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 
@@ -14,6 +14,9 @@ export class AdminAuthGuardService{
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.auth.user$.pipe(
+      //aspetta che firebase abbia caricato lo stato di autenticazione
+      filter(user => user !== undefined),
+      take(1),
       switchMap(user => {
         if (user) {
           // Recupera i dati dell'utente dal database
