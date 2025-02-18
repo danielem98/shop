@@ -1,16 +1,1 @@
-<h1>Orders</h1>
-
-<div class="accordion" id="accordionOrders">
-  <div class="accordion-item" *ngFor="let order of orders$ | async; let i = index">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" attr.data-bs-target="#collapse{{i}}" aria-expanded="true">
-        {{order.orderId}}
-      </button>
-    </h2>
-    <div id="collapse{{i}}" class="accordion-collapse collapse" data-bs-parent="#accordionOrders">
-      <div class="accordion-body">
-        {{order | json}}
-      </div>
-    </div>
-  </div>
-</div>
+<list-orders [orders]="orders$ |async"></list-orders>

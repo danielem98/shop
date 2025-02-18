@@ -66,4 +66,8 @@ export class AuthService {
   public getAuth(){
     return this.auth
   }
+
+  getCurrentUserId(): Promise<string | null> {
+    return this.auth.currentUser ? Promise.resolve(this.auth.currentUser.uid) : Promise.resolve(null);
+  }
 }
