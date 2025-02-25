@@ -1,5 +1,20 @@
+.user-container{
+    --bs-nav-link-color: #FFFFFF;
+    background-color: #E78D0D ;
+    color:#FFFFFF !important;
+    border-radius: 5px;
+}
+
 nav{
     padding-top: 25px;
+    background-color: #9D0101 !important;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+.navbar{
+    padding-top: 20px;
 }
 
 .badge-size{
@@ -7,3 +22,13 @@ nav{
     padding: 0.2em 0.4em; 
     min-width: auto;
 }
+
+div.container-fluid{
+    display: flex;
+    align-items:center;
+}
+
+.cart-count{
+    background-color: #E78D0D;
+}
+

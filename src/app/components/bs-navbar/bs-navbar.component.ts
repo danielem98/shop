@@ -7,11 +7,13 @@ import { of, Subscription, switchMap } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { AppUser } from '../../models/app-user';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { SvgLogoComponent } from "../../shared/svg-logo/svg-logo.component";
+import { SvgCartComponent } from "../../shared/svg-cart/svg-cart.component";
 
 @Component({
   selector: 'bs-navbar',
   standalone: true,
-  imports: [RouterModule, NgbModule, CommonModule],
+  imports: [RouterModule, NgbModule, CommonModule, SvgLogoComponent, SvgCartComponent],
   templateUrl: './bs-navbar.component.html',
   styleUrl: './bs-navbar.component.css'
 })

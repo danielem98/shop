@@ -1,37 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">Despar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="logo-container">
+        <a class="navbar-brand" routerLink="/">
+          <svg-logo></svg-logo>
+        </a>
+      </div>
+      <div class="cart-user-container">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-nowrap ">
           <li class="nav-item me-3">
             <a class="nav-link position-relative" routerLink="/shopping-cart">
-              Shopping Cart
-              <span class="position-absolute top-1 start-100 translate-middle badge badge-size rounded-pill bg-danger">
+              <svg-cart type="normal" color="white" height="25"></svg-cart>
+              <span class="cart-count position-absolute top-1 start-100 translate-middle badge badge-size rounded-pill bg-">
                 {{shoppingCartItemCount}}
               </span>
             </a>
           </li>
-          <li *ngIf="!appUser" class="nav-item me-3">
-            <a class="nav-link" routerLink="/login">Login</a>
-          </li>
 
-          <li *ngIf="appUser" ngbDropdown class="nav-item dropdown">
-            <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{appUser.name}}
-            </a>
-            <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a ngbDropdownItem class="dropdown-item" routerLink="/my-orders">My orders</a></li>
-              <div *ngIf="appUser.isAdmin">
-                <li><a ngbDropdownItem class="dropdown-item" routerLink="/admin/orders">Manage orders</a></li>
-                <li><a ngbDropdownItem class="dropdown-item" routerLink="/admin/products">Manage products</a></li>
-              </div>
-            
-              <li><a ngbDropdownItem class="dropdown-item" (click)="logout()">Log out</a></li>
-            </ul>
-          </li>
+          <div class="user-container">
+            <li *ngIf="!appUser" class="nav-item px-2 text-center">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+  
+            <li *ngIf="appUser" ngbDropdown class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{appUser.name}}
+              </a>
+              <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a ngbDropdownItem class="dropdown-item" routerLink="/my-orders">My orders</a></li>
+                <div *ngIf="appUser.isAdmin">
+                  <li><a ngbDropdownItem class="dropdown-item" routerLink="/admin/orders">Manage orders</a></li>
+                  <li><a ngbDropdownItem class="dropdown-item" routerLink="/admin/products">Manage products</a></li>
+                </div>
+              
+                <li><a ngbDropdownItem class="dropdown-item" (click)="logout()">Log out</a></li>
+              </ul>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
