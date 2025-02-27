@@ -24,9 +24,8 @@
                 <td>{{item.price | currency:'EUR':'symbol':'1.2-2'}}</td>
                 <td>
                     <product-quantity
-                    [shopping-cart]="cart$ |async" 
-                    [product]="item">
-
+                        [shopping-cart]="cart$ |async" 
+                        [product]="item">
                     </product-quantity>
                 </td>
                 <td>{{item.totalPrice | currency:'EUR':'symbol':'1.2-2'}}</td>

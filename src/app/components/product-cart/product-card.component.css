@@ -1,9 +1,97 @@
-.quantity-cotainer{
+/* Container principale */
+.container {
+    padding: 0 15px;
+  }
+  
+  .row {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.quantity-display{
-    font-size: medium;
-}
+    flex-wrap: wrap;
+    margin: -8px; /* Compensa il padding delle colonne */
+  }
+  
+  .col {
+    flex: 0 0 50%; /* 2 colonne su mobile */
+    max-width: 50%;
+    padding: 8px; /* Spaziatura tra le card */
+  }
+  
+  /* Stile card */
+  .card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%; /* Altezza piena per allineamento uniforme */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+  
+  .card-img-top {
+    height: 180px;
+    width: 100%;
+    object-fit: cover; /* Mantiene le proporzioni */
+    object-position: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card-body {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  /* Quantity component */
+  .quantity-container {
+    margin-top: 3px;
+    border-radius: 25px;
+  }
+  
+  .quantity-display {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .col {
+      flex: 0 0 33.333%; /* 3 colonne su tablet */
+      max-width: 33.333%;
+    }
+    
+    .card-img-top {
+      height: 200px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .col {
+      flex: 0 0 25%; /* 4 colonne su desktop */
+      max-width: 25%;
+    }
+    
+    .card-img-top {
+      height: 220px;
+    }
+  }
+  
+  /* Pulsanti */
+  .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 8px;
+  }

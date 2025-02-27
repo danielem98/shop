@@ -2,9 +2,10 @@ import { Routes } from '@angular/router';
 import { authGuard } from './auth.guard';
 import { AdminAuthGuardService } from './services/admin-auth-guard.service';
 import { ProductsComponent } from './components/products/products.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
-    {path: '', component: ProductsComponent},
+    {path: '', component: HomeComponent},
     //lazyLoading
     {path: 'products', loadComponent: ()=> import('./components/products/products.component')
         .then(c => c.ProductsComponent)},

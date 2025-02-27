@@ -1,57 +1,32 @@
 :root {
-    --bs-primary: #E78D0D !important;
+    --bs-primary: #E78D0D;
+    --bs-secondary:#9D0101;
     --bs-primary-rgb: 231, 141, 13;
-  
-    /* Colori dei link */
+    --bs-secondary-rgb: 157, 1, 1;
     --bs-link-color: #E78D0D;
-    --bs-link-hover-color: #d27e0a; /* Tonalità più scura per l'hover */
-  
+    --bs-link-hover-color: #d27e0a;
   }
   
-  /* Cambiare il colore dei bottoni */
   .btn-primary {
     background-color: var(--bs-primary) !important;
     border-color: var(--bs-primary) !important;
-    color: white !important;
+    color: white;
+    transition: all 0.3s ease;
   }
   
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: rgba(var(--bs-primary-rgb), 0.8) !important;
-  }
-  
-  /* Modifica l'outline dei bottoni (focus) */
-  .btn-primary:focus {
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.5) !important; /* Aggiunge un'ombra per l'outline */
-    border-color: var(--bs-primary) !important;
-  }
-  
-  /* Cambiare il colore dei link */
-  a {
-    color: var(--bs-link-color);
-    text-decoration: none; /* Rimuove la sottolineatura */
-  }
-  
-  a:hover {
-    color: var(--bs-link-hover-color);
-    text-decoration: underline; /* Aggiunge sottolineatura all'hover */
-  }
-  
-  /* Cambiare il colore dei bordi */
-  .border-primary {
-    border-color: var(--bs-primary) !important;
+  .btn-primary:hover {
+    background-color: #d27e0a !important;
+    transform: scale(0.97);
   }
 
-  /* Impostare il bordo di input e textarea a nero */
-input,
-textarea {
-  border-color: #000 !important; /* Imposta il bordo a nero */
-  box-shadow: none !important; /* Rimuove l'ombra di focus gialla */
-}
-
-/* Cambiare il bordo durante il focus */
-input:focus,
-textarea:focus {
-  border-color: #000 !important; /* Imposta il bordo a nero anche durante il focus */
-  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1) !important; /* Aggiungi un'ombra leggera nera se desideri */
-}
+  input,
+  textarea {
+    border: 1px solid #000;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25) !important;
+  }

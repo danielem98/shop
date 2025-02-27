@@ -1,9 +1,20 @@
-.quantity-cotainer{
+.quantity-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    width:100%;
 }
 
 .quantity-display{
     font-size: medium;
+    padding: 0 8px;
+}
+
+svg {
+    fill: white !important;
+}
+
+.cart-svg ::ng-deep svg {
+    height: 25px;
+    width: auto;
 }

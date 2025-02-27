@@ -1,0 +1,24 @@
+<div class="filter-scroll-container">
+    <div class="filter-container btn-group">
+        <input 
+            type="radio" 
+            class="btn-check" 
+            id="category-AllProducts" 
+            name="category" 
+            [value]="null" 
+            (change)="onCategoryChange(null)"
+            [checked]="true">
+        <label class="btn btn-outline-primary all-products-btn" for="category-AllProducts">All products</label>
+    
+        <div *ngFor="let category of categories$ | async; let i = index">
+            <input 
+                type="radio" 
+                class="btn-check" 
+                id="category-{{i}}" 
+                name="category" 
+                [value]="category" 
+                (change)="onCategoryChange(category)">
+            <label class="btn btn-outline-primary" for="category-{{i}}">{{ category.name }}</label>
+        </div>
+    </div>
+</div>

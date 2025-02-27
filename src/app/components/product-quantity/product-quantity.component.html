@@ -1,9 +1,13 @@
-<div class="quantity-cotainer">
+<div class="quantity-container">
     <div class="quantity-decrease">
-        <button class="btn btn-primary" (click)="removeFromCart()">-</button>
+        <button class="btn btn-primary" (click)="removeFromCart()">
+            <svg-cart class="cart-svg" type="minus" color='white'></svg-cart>
+        </button>
     </div>
-    <div class="quantity-display">{{getQuantity()}} in cart </div>
+    <div class="quantity-display">{{getQuantity()}}</div>
     <div class="quantity-increase">
-        <button class="btn btn-primary" (click)="addToCart()">+</button>
+        <button class="btn btn-primary" (click)="addToCart()">
+            <svg-cart class="cart-svg" type="plus" color='white' ></svg-cart>
+        </button>
     </div>
 </div>

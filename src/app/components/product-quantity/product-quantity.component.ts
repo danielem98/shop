@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 import { ShoppingCartService } from '../../services/shopping-cart.service';
+import { SvgCartComponent } from "../../shared/svg-cart/svg-cart.component";
 
 
 @Component({
   selector: 'product-quantity',
   standalone: true,
-  imports: [],
+  imports: [SvgCartComponent],
   templateUrl: './product-quantity.component.html',
   styleUrl: './product-quantity.component.css'
 })

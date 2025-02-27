@@ -12,6 +12,7 @@ nav{
 
 .navbar-nav{
     flex-direction: row;
+    align-items: center;
 }
 .navbar{
     padding-top: 20px;
@@ -32,3 +33,36 @@ div.container-fluid{
     background-color: #E78D0D;
 }
 
+.svg-cart ::ng-deep svg{
+    height: 28px;
+    width: auto;
+}
+.dropdown-menu{
+    z-index: 1001;
+}
+navbar-nav .nav-link.show {
+    color: white !important;
+  }
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 100%;
+    margin-top: 0.125rem;
+    z-index: 1001;
+}
+a#navbarDropdown.dropdown-toggle.nav-link{
+    padding: 8px 5px;
+}
+
+
+@media (max-width: 991.98px) {
+    .user-container {
+      position: static;
+    }
+    .navbar-toggler {
+        padding: 5px !important; /* Forza il padding a 5px */
+      }
+}
+  
