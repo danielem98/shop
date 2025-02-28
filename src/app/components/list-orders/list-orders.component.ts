@@ -12,7 +12,9 @@ import { OrderService } from '../../services/order.service';
 export class ListOrdersComponent {
   @Input() orders: any;
 
-  constructor(public orderService: OrderService) { }
+  constructor(public orderService: OrderService) {
+    
+  }
 
 
 }

@@ -1,21 +1,35 @@
-.form-container{
+.address-container, 
+.city-cap-container {
     display: flex;
-    flex-direction: column;
-    align-items:flex-start
+    gap: 15px;
 }
 
-.address-container,
-.city-cap-container{
-    display: flex;
-    flex-direction: row;
+.address,.city{
+    flex:3;
 }
-
-.address,
-.city{
-    flex: 3;
-}
-
 .address-number,
-.cap{
+.cap {
     flex: 1;
+}
+
+/* Mobile styling */
+@media (max-width: 767.98px) {
+    
+    .button-container .btn {
+        width: 100%;
+    }
+    
+    .form-container {
+        padding-top: 20px; /* Spaziatura tra sommario e form */
+    }
+
+    .button-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
 }

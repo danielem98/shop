@@ -5,17 +5,14 @@
     border-radius: 5px;
 }
 
-nav{
-    padding-top: 25px;
+.navbar{
+    padding: 18px 20px 10px 30px;
     background-color: #9D0101 !important;
 }
 
 .navbar-nav{
     flex-direction: row;
     align-items: center;
-}
-.navbar{
-    padding-top: 20px;
 }
 
 .badge-size{
@@ -42,7 +39,7 @@ div.container-fluid{
 }
 navbar-nav .nav-link.show {
     color: white !important;
-  }
+}
 
 .navbar-nav .dropdown-menu {
     position: absolute;
@@ -63,6 +60,10 @@ a#navbarDropdown.dropdown-toggle.nav-link{
     }
     .navbar-toggler {
         padding: 5px !important; /* Forza il padding a 5px */
-      }
+    }
+    .navbar{
+        padding: 18px 10px 10px 12px;
+        background-color: #9D0101 !important;
+    }
 }
   

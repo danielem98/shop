@@ -37,16 +37,11 @@ td.img-container{
 }
 
 @media (max-width: 768px) {
-    .table {
-        font-size: 0.8rem;
-    }
+  
     :host ::ng-deep .quantity-display {
         font-size: 0.8rem !important;
         padding-left: 3px;
         padding-right: 3px;
-    }
-    .table thead {
-        display: none;
     }
     
     .table td:before {

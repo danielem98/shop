@@ -1,53 +1,49 @@
-<h1>Shopping cart</h1>
-
-<ng-container> 
-    <p>
-        you have {{shoppingCartItemCount}} items in your shopping cart
-    </p>
-
-    <table class="table table-hover table-responsive">
-        <thead class="table-light center">
-            <tr>
-                <th></th>
-                <th>Product</th>
-                <th>Unit Price</th>
-                <th>Quantity</th>
-                <th>TotalPrice</th>
-            </tr>
-        </thead>
-        <tbody class="center">
-            <tr class="table-group-divider" *ngFor="let item of shoppingCartItems">
-                <td class="img-container">
-                    <img [src]="item.imageUrl" class="thumbnail" alt="">
-                </td>
-                <td>{{item.title}} </td>
-                <td>{{item.price | currency:'EUR':'symbol':'1.2-2'}}</td>
-                <td>
-                    <product-quantity
-                        [shopping-cart]="cart$ |async" 
-                        [product]="item">
-                    </product-quantity>
-                </td>
-                <td>{{item.totalPrice | currency:'EUR':'symbol':'1.2-2'}}</td>
-            </tr>
-        </tbody>
-        <tfoot class="center">
-            <tr class="table-light align-middle">
-                <td colspan="4">Total</td>
-                <td>{{totalCartPrice | currency:'EUR':'symbol':'1.2-2'}}</td>
-            </tr>
-        </tfoot>
-    </table>
-    <div class="button-container">
-        <button
-        *ngIf="shoppingCartItemCount > 0"
-        class="btn btn-secondary" 
-        (click)="clearCart()"
-        >Clear Cart</button>
-    <button 
-        [disabled] = "shoppingCartItemCount == 0"
-        class="btn btn-primary"
-        (click)="checkOut()"
-        >Checkout</button>
-    </div>
-</ng-container>
+<div class="px-3 px-md-5 py-2">
+    <ng-container > 
+        <table class="table table-hover table-responsive">
+            <thead class="table-light center">
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>TotalPrice</th>
+                </tr>
+            </thead>
+            <tbody class="center">
+                <tr class="table-group-divider" *ngFor="let item of shoppingCartItems">
+                    <td class="img-container">
+                        <img [src]="item.imageUrl" class="thumbnail" alt="">
+                    </td>
+                    <td>{{item.title}} </td>
+                    <td>{{item.price | currency:'EUR':'symbol':'1.2-2'}}</td>
+                    <td>
+                        <product-quantity
+                            [shopping-cart]="cart$ |async" 
+                            [product]="item">
+                        </product-quantity>
+                    </td>
+                    <td>{{item.totalPrice | currency:'EUR':'symbol':'1.2-2'}}</td>
+                </tr>
+            </tbody>
+            <tfoot class="center">
+                <tr class="table-light align-middle">
+                    <td colspan="4">Total</td>
+                    <td>{{totalCartPrice | currency:'EUR':'symbol':'1.2-2'}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="button-container">
+            <button
+            *ngIf="shoppingCartItemCount > 0"
+            class="btn btn-secondary" 
+            (click)="clearCart()"
+            >Clear Cart</button>
+        <button 
+            [disabled] = "shoppingCartItemCount == 0"
+            class="btn btn-primary"
+            (click)="checkOut()"
+            >Checkout</button>
+        </div>
+    </ng-container>
+</div>

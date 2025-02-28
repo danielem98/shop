@@ -2,3 +2,10 @@
     background-color: white !important;
     color: black !important;
 }
+
+.accordion-button:focus {
+    box-shadow: 0px 0px 5px #9D0101 !important; 
+    border-color: #9D0101 !important;
+    background-color: #9D0101  !important;
+    color: white !important;
+}
