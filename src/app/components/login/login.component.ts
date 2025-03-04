@@ -13,6 +13,6 @@ export class LoginComponent {
   }
 
   loginWithGoogle(){
-    this.auth.login()
+    this.auth.loginWithGoogle()
   }
 }
